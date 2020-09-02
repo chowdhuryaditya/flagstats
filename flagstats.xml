@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" ?>
+<casaxml xmlns="http://casa.nrao.edu/schema/psetTypes.html"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://casa.nrao.edu/schema/casa.xsd
+file:///opt/casa/code/xmlcasa/xml/casa.xsd">
+
+<task type="function" name="flagstats" category="calibration" visibility="experimental">
+
+	<shortdescription>Task for deriving flagging statistics from a GMRT measurement set. </shortdescription>
+
+	<description>.</description>
+
+	<input>
+
+		<param type="string" name="vis">
+			<description>Measurement set to read from</description>
+			<value></value>
+		</param>
+
+		<param type="string" name="outname">
+			<description>Name of directory where flagging statistics will be stored</description>
+			<value></value>
+		</param>
+
+		 <param type="string" name="scan" >
+			<description>Scans to process</description>
+			<value></value>
+		</param>
+
+		<param type="bool" name="excludecsqrbl" >
+			<description>Assume that central square baselines does not exist while computing statistics</description>
+			<value>False</value>
+		</param>
+   		
+		<param type="int" name="navgtime" >
+			<description>Number of time records to average while deriving temporal variation of flagging</description>
+			<value>12</value>
+		</param>
+
+		<param type="int" name="smoothwindow" >
+			<description>Size of window (in no. of channels) of the running median filter which will be used to compute the fraction of quasi-broadband RFI</description>
+			<value>90</value>
+		</param>
+		<param type="int" name="narrowbandthreshold" >
+			<description>Excess flagging percent of channels affected by narrowband RFI</description>
+			<value>1</value>
+		</param>
+
+		<param type="bool" name="reprocess" >
+			<description>Reprocess existing statistics?</description>
+			<value>False</value>
+		</param>
+
+		 <constraints/>
+		
+				
+
+ </input>
+
+  <returns type="void"/>
+
+</task>
+
+</casaxml>
